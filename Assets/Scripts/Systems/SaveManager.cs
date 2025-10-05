@@ -6,22 +6,43 @@ public class SaveManager : PersistentSingleton<SaveManager>
 
 {
     private string _savePath;
-    public string _pathToLoad;
+    private const int _maxSaveSlots = 12;
+
 
     protected override void Awake()
     {
         base.Awake();
-        _savePath = Path.Combine(Application.persistentDataPath, "game_save.json");
+
+        _savePath = Path.Combine(Application.persistentDataPath, "Visual-novel_saveFiles");
+
+        if (!Directory.Exists(_savePath))
+        {
+            Directory.CreateDirectory(_savePath);
+        }
+
         Debug.Log(_savePath);
     }
 
 
-    public void SaveGame(SaveFile dataToSave)
+    private string GetSavePath(int slotIndex)
     {
+        return Path.Combine(_savePath, slotIndex + ".json");
+    }
+
+
+    public void SaveGame(SaveFile dataToSave, int slotIndex)
+    {
+        if (slotIndex < 1 || slotIndex > _maxSaveSlots)
+        {
+            return;
+        }
+
+        string path = GetSavePath(slotIndex);
+
         try
         {
             string json = JsonConvert.SerializeObject(dataToSave, Formatting.Indented);
-            File.WriteAllText(_savePath, json);
+            File.WriteAllText(path, json);
         }
 
         catch (System.Exception e)
@@ -31,9 +52,16 @@ public class SaveManager : PersistentSingleton<SaveManager>
     }
 
 
-    public SaveFile LoadGame()
+    public SaveFile LoadGame(int slotIndex)
     {
-        if (File.Exists(_savePath))
+        if (slotIndex < 1 || slotIndex > _maxSaveSlots)
+        {
+            return new SaveFile();
+        }
+
+        string path = GetSavePath(slotIndex);
+
+        if (File.Exists(path))
         {
             try
             {
@@ -57,22 +85,41 @@ public class SaveManager : PersistentSingleton<SaveManager>
     }
 
 
-    public bool HasSaveGame()
+    public bool HasSaveGame(int slotIndex)
     {
-        return File.Exists(_savePath);
+        return File.Exists(GetSavePath(slotIndex));
     }
 
 
-    public void DeleteSaveGame()
+    public void DeleteSaveGame(int slotIndex)
     {
-        if (File.Exists(_savePath))
+        if (slotIndex < 1 || slotIndex > _maxSaveSlots)
         {
-            File.Delete(_savePath);
+            return;
+        }
+
+        string path = GetSavePath(slotIndex);
+
+        if (File.Exists(path))
+        {
+            File.Delete(path);
         }
 
         else
         {
             Debug.LogWarning("No SaveFile to delete");
         }
+    }
+
+
+    public string[] GetAllSaveSlots()
+    {
+        string[] slots = new string[_maxSaveSlots];
+
+        for (int i = 0; i < _maxSaveSlots; i++)
+        {
+            slots[i] = HasSaveGame(i + 1) ? $"Slot{i + 1}" : $"Empty Slot{i + 1}";
+        }
+        return slots;
     }
 }

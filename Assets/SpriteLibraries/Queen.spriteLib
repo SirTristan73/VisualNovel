@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Body
+    m_Hash: 999990412
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: DefaultBody
+      m_Hash: 503988620
+      m_Sprite: {fileID: 21300000, guid: 08d20975400ee3b4490dc19840f7b1bb, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 08d20975400ee3b4490dc19840f7b1bb, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  - m_Name: Face
+    m_Hash: 623301721
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: DefaultFace
+      m_Hash: 11940185
+      m_Sprite: {fileID: 21300000, guid: 8de0b986b31719948bdaabfcc0cb9c41, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 8de0b986b31719948bdaabfcc0cb9c41, type: 3}
+    - m_Name: Silent
+      m_Hash: 1006664890
+      m_Sprite: {fileID: 21300000, guid: cfaed554b5c93754c832dcc634bf4570, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: cfaed554b5c93754c832dcc634bf4570, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Clothing
+    m_Hash: 720001767
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: DefaultClothing
+      m_Hash: 618845249
+      m_Sprite: {fileID: 21300000, guid: 47d347d46f6648d408424927e042a4a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 47d347d46f6648d408424927e042a4a7, type: 3}
+    - m_Name: Dress
+      m_Hash: 694510331
+      m_Sprite: {fileID: 21300000, guid: c40b63f57ae7ef9409e85eaf64c09d62, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: c40b63f57ae7ef9409e85eaf64c09d62, type: 3}
+    - m_Name: Painted
+      m_Hash: 862422293
+      m_Sprite: {fileID: 21300000, guid: cb27111c12c091a45a5ead37f0af3d6a, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: cb27111c12c091a45a5ead37f0af3d6a, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 3
+  - m_Name: Hair
+    m_Hash: 1019596327
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: DefaultHair
+      m_Hash: 425012007
+      m_Sprite: {fileID: -8557200201627989998, guid: d41b4529c28e3b64884bc39e2bfe32fe, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -8557200201627989998, guid: d41b4529c28e3b64884bc39e2bfe32fe, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638938884575492327
+  m_Version: 1

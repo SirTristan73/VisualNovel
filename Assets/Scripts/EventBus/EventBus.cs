@@ -21,7 +21,7 @@ namespace EventBus
         }
 
 
-        public static void SubscribeToEvenet<T>(Action<T> action) where T : EventType
+        public static void SubscribeToEvent<T>(Action<T> action) where T : EventType
         {
             Type type = typeof(T);
 
